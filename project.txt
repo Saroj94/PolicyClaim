@@ -1,0 +1,36 @@
+🌟 Real-World Industry-Standard Data Pipeline (Best Practices)
+	1.	Handle Outliers (Before Train-Test Split)
+	2.	Feature Engineering (Before Train-Test Split)
+	3.	Train-Test Split
+	4.	Data Transformation & Scaling (After Train-Test Split)
+	5.	Model Training
+	6.	Model Evaluation
+	7.	Model Deployment
+	8.	Monitoring & Maintenance (Essential in Production)
+	9.	Data Versioning & Model Versioning (MLOps Best Practices)
+	10.	Automated Model Retraining (For Drift Handling)
+
+
+    📈 Best Practice for Handling Skewness (Industry Standard)
+	1.	Handle Outliers (Before Train-Test Split)
+	•	Removal
+	•	Capping (Winsorization)
+	•	Transformation
+	2.	Check Skewness Again. If it’s still high, proceed to:
+	•	Log Transform (for positive skewness).
+	•	Square Root Transform (for moderate positive skewness).
+	•	Box-Cox or Yeo-Johnson (for negative or mixed skewness).
+	3.	Scale the Data (If using linear models).
+
+    Map(): This function is more efficient than for loop hence it can be use
+           inplace of for loop to run through values by taking help of lambda function to iterate over each 
+           values of specific column or list
+
+    ##separating the Max_power, and Max_torque feature into two different feature like power, torque and rotation(rpm)
+    def FeatureExtract(data:pd.DataFrame, feat: str, RColName:str, LColName:str)->pd.DataFrame:
+    ## spliting(split()) the value into two parts considering @ as splitting factor on each(lambda) value of entire(map()) column 
+    ## and converting them into list(list())
+    dfd=list(map(lambda x : x.split('@'),data[feat])) 
+    ##warping into the original dataframe 
+    data[[RColName,LColName]] =pd.DataFrame(dfd,columns=[RColName,LColName],index=data.index)
+    return data

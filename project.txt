@@ -10,6 +10,30 @@
 	9.	Data Versioning & Model Versioning (MLOps Best Practices)
 	10.	Automated Model Retraining (For Drift Handling)
 
+    1. Load your dataset
+    2. Perform EDA
+        ↳ Null values, datatypes
+        ↳ Feature distributions
+        ↳ Outlier detection
+        ↳ Correlation matrix ✅
+    3. Feature engineering
+    4. Feature selection
+    5. Feature encoding
+    6. Handle class imbalance (if needed)
+    7. Train-test split
+    8. Modeling
+    9. Evaluation
+
+    ## Industry standard steps
+    1. Data Collection / Ingestion
+    2. Data Cleaning & EDA (Iterative)
+    3. Feature Engineering & Encoding
+    4. Imbalance Handling
+    5. Train-Test Split (w/ Cross-Validation)
+    6. Modeling + Experiment Tracking
+    7. Evaluation (Train/Val/Test split)
+    8. Model Deployment (API or Batch)
+    9. Monitoring + Retraining
 
     📈 Best Practice for Handling Skewness (Industry Standard)
 	1.	Handle Outliers (Before Train-Test Split)
